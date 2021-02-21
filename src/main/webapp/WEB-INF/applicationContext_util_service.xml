@@ -13,11 +13,9 @@
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-2.0.1.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
-	
-	<import resource="applicationContext_ds.xml"/>
-    <import resource="applicationContext_util_dao.xml"/>
-    <import resource="applicationContext_util_service.xml"/>
-    
-	<bean id="employeeWebImpl" class="th.co.por.web.impl.util.EmployeeWebImpl" />
 
+	<bean id="employeeService" class="th.co.por.service.impl.util.EmployeeServiceImpl">
+		<property name="employeeDao" ref="employeeDao" />
+	</bean>
 </beans>
+
